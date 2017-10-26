@@ -10,6 +10,7 @@ var app = express();
 var PORT = 3000;
 
 // Sets up the Express app to handle data parsing
+// urlencoded is similar to writeHead
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -89,6 +90,6 @@ app.post("/api/new", function(req, res) {
 
 // Starts the server to begin listening
 // =============================================================
-app.listen(PORT, function() {
+app.listen(process.env.PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
